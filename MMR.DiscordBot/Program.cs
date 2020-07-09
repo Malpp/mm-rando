@@ -165,9 +165,9 @@ namespace MMR.DiscordBot
                         }
                         if (!success)
                         {
-                            using (var db = _connectionFactory.Open())
+                            using (var db1 = _connectionFactory.Open())
                             {
-                                db.DeleteById<UserSeedEntity>(message.Author.Id);
+                                db1.DeleteById<UserSeedEntity>(message.Author.Id);
                             }
                             await messageResult.ModifyAsync(mp => mp.Content = "An error occured.");
                         }

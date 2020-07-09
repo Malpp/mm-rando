@@ -24,6 +24,8 @@ namespace MMR.Randomizer
                 {
                     randomized = randomizer.Randomize(progressReporter);
 
+                    Plando.Modify(randomized);
+
                     if ((configuration.OutputSettings.GenerateSpoilerLog || configuration.OutputSettings.GenerateHTMLLog)
                         && configuration.GameplaySettings.LogicMode != LogicMode.Vanilla)
                     {
